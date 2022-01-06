@@ -28,6 +28,7 @@ namespace AppSettingsManager
             services.AddConfiguration<TwilioSettings>(Configuration, "Twilio");
             //Registing using Extension method
             services.AddConfiguration<SocialLoginSettings>(Configuration, "SocialLoginSettings");
+            services.AddConfiguration<LeftNavBar>(Configuration, "LeftNavBar");
             //Registering to access through IOptions
             services.Configure<SocialLoginSettings>(Configuration.GetSection("SocialLoginSettings"));
             services.Configure<TwilioSettings>(Configuration.GetSection("Twilio"));

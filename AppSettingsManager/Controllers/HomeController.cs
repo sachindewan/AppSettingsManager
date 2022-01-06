@@ -20,9 +20,10 @@ namespace AppSettingsManager.Controllers
         private readonly IOptions<TwilioSettings> _twilioOptions;
         private readonly IOptions<SocialLoginSettings> _socialLoginOptions;
         private readonly SocialLoginSettings _socialLoginSetting;
+        private readonly LeftNavBar _leftNavBar;
 
         public HomeController(ILogger<HomeController> logger, IConfiguration config, IOptions<TwilioSettings> twilioOptions,
-            TwilioSettings twilioSettings,IOptions<SocialLoginSettings> socialLoginOptions, SocialLoginSettings socialLoginSetting)
+            TwilioSettings twilioSettings,IOptions<SocialLoginSettings> socialLoginOptions, SocialLoginSettings socialLoginSetting, LeftNavBar leftNavBar)
         {
             _logger = logger;
             _config = config;
@@ -32,6 +33,7 @@ namespace AppSettingsManager.Controllers
             //config.GetSection("Twilio").Bind(_twilioSettings);
             _twilioSettings = twilioSettings;
             _socialLoginSetting = socialLoginSetting;
+            _leftNavBar = leftNavBar;
         }
 
         public IActionResult Index()
